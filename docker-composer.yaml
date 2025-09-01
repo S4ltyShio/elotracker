@@ -1,0 +1,10 @@
+services:
+  lol-tracker-app:
+    build: .
+    container_name: lol-tracker
+    restart: unless-stopped
+    ports:
+      - "3333:3000" # Map port 3333 on your machine to port 3000 inside the container
+    env_file:
+      - .env # This tells Docker Compose to load the RIOT_API_KEY from your .env file
+
